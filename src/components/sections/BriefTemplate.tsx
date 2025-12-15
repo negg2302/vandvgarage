@@ -1,4 +1,4 @@
-import { Copy, Check } from "lucide-react";
+import { Copy, Check, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
@@ -52,17 +52,17 @@ const BriefTemplate = () => {
     <section className="py-24 px-4" id="brief">
       <div className="container max-w-3xl">
         <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Готовы начать?</h2>
+          <h2 className="text-3xl md:text-4xl font-semibold mb-4">Готовы начать?</h2>
           <p className="text-muted-foreground">
-            Заполните бриф и отправьте нам — это ускорит начало работы
+            Заполните бриф — это ускорит начало работы
           </p>
         </div>
 
-        <div className="bg-card rounded-2xl border border-border/50 shadow-lg overflow-hidden animate-fade-in-up">
-          <div className="bg-muted/50 px-6 py-4 flex items-center justify-between border-b border-border/50">
-            <span className="font-medium">Шаблон брифа</span>
+        <div className="bg-card/60 backdrop-blur-sm rounded-xl border border-border/40 overflow-hidden animate-fade-in-up">
+          <div className="bg-muted/30 px-6 py-4 flex items-center justify-between border-b border-border/40">
+            <span className="text-sm font-medium text-muted-foreground">Шаблон брифа</span>
             <Button
-              variant="outline"
+              variant="ghost"
               size="sm"
               onClick={handleCopy}
               className="gap-2"
@@ -91,7 +91,8 @@ const BriefTemplate = () => {
             target="_blank" 
             rel="noopener noreferrer"
           >
-            <Button variant="hero" size="lg" className="gap-2">
+            <Button size="lg" className="gap-2">
+              <Send className="w-4 h-4" />
               Отправить в Telegram
             </Button>
           </a>
