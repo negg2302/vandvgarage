@@ -3,9 +3,9 @@ import { Button } from "@/components/ui/button";
 
 const Header = () => {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
-      <div className="container flex items-center justify-between h-16 px-4">
-        <a href="/" className="font-bold text-xl">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/30">
+      <div className="container flex items-center justify-between h-14 px-4">
+        <a href="/" className="font-semibold text-lg">
           V&V Garage
         </a>
         
@@ -29,8 +29,8 @@ const Header = () => {
           target="_blank" 
           rel="noopener noreferrer"
         >
-          <Button variant="default" size="sm" className="gap-2">
-            <Send className="w-4 h-4" />
+          <Button size="sm" className="gap-2">
+            <Send className="w-3.5 h-3.5" />
             <span className="hidden sm:inline">Написать</span>
           </Button>
         </a>

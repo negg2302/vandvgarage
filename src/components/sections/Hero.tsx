@@ -1,25 +1,62 @@
 import { Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState, useEffect } from "react";
+
+const services = [
+  "Telegram-бот",
+  "Сайт или веб-сервис",
+  "MVP или прототип",
+  "Интеграция сервисов",
+  "AI-помощник",
+  "Решение для мероприятия",
+  "Техническая консультация",
+];
 
 const Hero = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsAnimating(true);
+      setTimeout(() => {
+        setCurrentIndex((prev) => (prev + 1) % services.length);
+        setIsAnimating(false);
+      }, 200);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-20">
-      {/* Animated geometric shapes */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-20 grainy">
+      {/* Subtle gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-muted/50 via-background to-muted/30" />
+      
+      {/* Minimal geometric accents */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-20 h-20 bg-primary/20 rounded-full animate-float" />
-        <div className="absolute top-40 right-20 w-32 h-32 bg-secondary/20 rounded-lg animate-float-delayed" />
-        <div className="absolute bottom-40 left-1/4 w-16 h-16 bg-accent/30 rotate-45 animate-spin-slow" />
-        <div className="absolute bottom-20 right-1/3 w-24 h-24 bg-destructive/10 rounded-full animate-pulse-soft" />
-        <div className="absolute top-1/3 left-1/3 w-12 h-12 bg-primary/15 rounded-lg rotate-12 animate-bounce-soft" />
+        <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-muted to-transparent opacity-60 blur-3xl" />
+        <div className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-accent/20 to-transparent opacity-40 blur-3xl" />
       </div>
 
       <div className="container max-w-4xl text-center relative z-10">
         <div className="animate-fade-in">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight">
-            Разрабатываем софт и автоматизацию под ваши процессы
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight mb-6 leading-tight">
+            <span className="text-muted-foreground">Срочно нужен</span>
+            <br />
+            <span 
+              className={`inline-block min-w-[280px] md:min-w-[400px] transition-all duration-200 ${
+                isAnimating ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'
+              }`}
+            >
+              {services[currentIndex]}
+            </span>
+            <span className="text-muted-foreground">?</span>
+            <br />
+            <span className="text-foreground">— Сделаем</span>
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-            Небольшая команда full-stack разработчиков. Создаём решения для реорганизации процессов, ивент-проектов, Telegram-ботов, мини-игр, приложений и AI-интеграций.
+          <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed font-light">
+            Небольшая команда full-stack разработчиков. Создаём решения для бизнеса, ивентов, автоматизации и AI-интеграций.
           </p>
           
           <a 
@@ -27,36 +64,30 @@ const Hero = () => {
             target="_blank" 
             rel="noopener noreferrer"
           >
-            <Button variant="hero" size="lg" className="gap-2">
-              <Send className="w-5 h-5" />
+            <Button size="lg" className="gap-2">
+              <Send className="w-4 h-4" />
               Обсудить задачу
             </Button>
           </a>
         </div>
 
         {/* Advantages */}
-        <div className="grid md:grid-cols-3 gap-6 mt-20 animate-fade-in-up">
-          <div className="p-6 bg-card rounded-2xl border border-border/50 shadow-sm hover:shadow-md transition-shadow">
-            <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 mx-auto">
-              <span className="text-2xl">⚡</span>
-            </div>
-            <h3 className="font-semibold mb-2">MVP за 1–4 недели</h3>
-            <p className="text-sm text-muted-foreground">Быстрый запуск вашего продукта</p>
+        <div className="grid md:grid-cols-3 gap-4 mt-20 animate-fade-in-up">
+          <div className="p-6 bg-card/80 backdrop-blur-sm rounded-xl border border-border/50">
+            <div className="text-2xl mb-3">⚡</div>
+            <h3 className="font-medium mb-1">MVP за 1–4 недели</h3>
+            <p className="text-sm text-muted-foreground">Быстрый запуск продукта</p>
           </div>
           
-          <div className="p-6 bg-card rounded-2xl border border-border/50 shadow-sm hover:shadow-md transition-shadow">
-            <div className="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center mb-4 mx-auto">
-              <span className="text-2xl">📊</span>
-            </div>
-            <h3 className="font-semibold mb-2">Бизнес-аналитики в команде</h3>
+          <div className="p-6 bg-card/80 backdrop-blur-sm rounded-xl border border-border/50">
+            <div className="text-2xl mb-3">📊</div>
+            <h3 className="font-medium mb-1">Бизнес-аналитики</h3>
             <p className="text-sm text-muted-foreground">Прозрачность на каждом этапе</p>
           </div>
           
-          <div className="p-6 bg-card rounded-2xl border border-border/50 shadow-sm hover:shadow-md transition-shadow">
-            <div className="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center mb-4 mx-auto">
-              <span className="text-2xl">🛠</span>
-            </div>
-            <h3 className="font-semibold mb-2">Поддержка</h3>
+          <div className="p-6 bg-card/80 backdrop-blur-sm rounded-xl border border-border/50">
+            <div className="text-2xl mb-3">🛠</div>
+            <h3 className="font-medium mb-1">Поддержка</h3>
             <p className="text-sm text-muted-foreground">Сопровождаем после запуска</p>
           </div>
         </div>
