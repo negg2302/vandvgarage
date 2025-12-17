@@ -2,13 +2,23 @@ import { Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 
+// const services = [
+//   "Telegram-бот",
+//   "Сайт или веб-сервис",
+//   "MVP или прототип",
+//   "Интеграция сервисов",
+//   "AI-помощник",
+//   "Решение для мероприятия",
+//   "Техническая консультация",
+// ];
+
 const services = [
   "Telegram-бот",
   "Сайт или веб-сервис",
   "MVP или прототип",
   "Интеграция сервисов",
-  "AI-помощник",
-  "Решение для мероприятия",
+  "AI-помощник для процессов",
+  "IT решение для мероприятия",
   "Техническая консультация",
 ];
 
@@ -42,7 +52,7 @@ const Hero = () => {
       <div className="container max-w-4xl text-center relative z-10">
         <div className="animate-fade-in">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight mb-6 leading-tight">
-            <span className="text-muted-foreground">Срочно нужен</span>
+            <span className="text-muted-foreground">Срочно требуется </span>
             <br />
             <span 
               className={`inline-block min-w-[280px] md:min-w-[400px] transition-all duration-200 ${
