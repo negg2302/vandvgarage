@@ -55,8 +55,7 @@ const Hero = () => {
             <span className="text-muted-foreground">Срочно требуется </span>
             <br />
             <span 
-              // className={`inline-block min-w-[280px] md:min-w-[400px] transition-all duration-200 ${
-                className={`inline-block min-w-[280px] md:min-w-[400px] transition-all duration-200 ${
+              className={`inline-block min-w-[280px] md:min-w-[400px] transition-all duration-200 ${
                 isAnimating ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'
               }`}
             >
