@@ -13,7 +13,8 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      {/* GitHub Pages serves the app from /vandvgarage/, so router needs the same base */}
+      <BrowserRouter basename="/vandvgarage">
         <Routes>
           <Route path="/" element={<Index />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

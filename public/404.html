@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="0; url=/vandvgarage/" />
+    <title>Redirecting…</title>
+    <script>
+      // Preserve the originally requested path when redirecting the SPA on GitHub Pages
+      const redirectPath = window.location.pathname.replace(/^\/vandvgarage/, "").replace(/^\/+/, "");
+      const query = window.location.search || "";
+      const hash = window.location.hash || "";
+      const target = "/vandvgarage/" + (redirectPath ? redirectPath + "/" : "") + query + hash;
+      window.location.replace(target);
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to the application…</p>
+  </body>
+</html>
