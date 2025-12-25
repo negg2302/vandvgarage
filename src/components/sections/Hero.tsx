@@ -13,14 +13,22 @@ import { useState, useEffect } from "react";
 // ];
 
 const services = [
-  "Telegram-бот",
+  "Telegram-бот под задачу",
   "Сайт или веб-сервис",
   "MVP или прототип",
   "Интеграция сервисов",
-  "AI-помощник для процессов",
-  "IT решение для мероприятия",
+  "IT решения для ивентов",
   "Техническая консультация",
 ];
+
+// const services = [
+//   "Telegram-бот",
+//   "Сайт",
+//   "MVP",
+//   "Прототип",
+//   "Скрипт",
+//   "Консультация",
+// ];
 
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
