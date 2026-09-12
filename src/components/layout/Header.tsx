@@ -25,7 +25,7 @@ const Header = () => {
         </nav>
 
         <a 
-          href="https://t.me/mc_vhs" 
+          href="https://t.me/ChampignySurMarn" 
           target="_blank" 
           rel="noopener noreferrer"
         >

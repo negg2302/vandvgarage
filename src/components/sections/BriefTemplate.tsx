@@ -87,7 +87,7 @@ const BriefTemplate = () => {
 
         <div className="text-center mt-8 animate-fade-in">
           <a 
-            href="https://t.me/mc_vhs" 
+            href="https://t.me/ChampignySurMarn" 
             target="_blank" 
             rel="noopener noreferrer"
           >
