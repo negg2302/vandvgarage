@@ -13,13 +13,13 @@ const Footer = () => {
           </div>
           
           <a 
-            href="https://t.me/mc_vhs" 
+            href="https://t.me/ChampignySurMarn" 
             target="_blank" 
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
           >
             <Send className="w-4 h-4" />
-            <span className="text-sm">@mc_vhs</span>
+            <span className="text-sm">@ChampignySurMarn</span>
           </a>
         </div>
         
